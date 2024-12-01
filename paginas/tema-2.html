@@ -17,16 +17,16 @@
           <a class="nav-link" href="../index.html">Inicio</a>
         </li>
         <li>
-          <a class="nav-link" href="tema-1.html">Tema 1</a>
+          <a class="nav-link" href="tema-1.html">Seguridad en una red</a>
         </li>
         <li>
-          <a class="nav-link active" aria-current="page" href="tema-2.html">Tema 2</a>
+          <a class="nav-link active" aria-current="page" href="">Tunneling</a>
         </li>
         <li>
-          <a class="nav-link" href="tema-3.html">Tema 3</a>
+          <a class="nav-link" href="tema-3.html">Internet de las Cosas</a>
         </li>
         <li>
-          <a class="nav-link"href="integrantes.html">Integrantes</a>
+          <a class="nav-link" href="integrantes.html">Créditos</a>
         </li>
       </ul>
     </div>
@@ -34,84 +34,246 @@
 
   <nav>
     <ol>
-      <li>Página Principal</li>
-      <li>Tema 1</li>
-      <li>Tema 2</li>
-      <li>Tema 3</li>
-      <li>Integrantes</li>
+      <li><a href="../index.html">Inicio</a></li>
+      <li><a href="tema-1.html">Seguridad en una red</a></li>
+      <li><a href="">Tunneling</a>
+        <ul>
+          <li><a href="" onclick="revelarPagina(0); event.preventDefault()">¿Qué es el tunneling?</a></li>
+          <li><a href="" onclick="revelarPagina(1); event.preventDefault()">Protocolos de tunneling</a></li>
+          <li><a href="" onclick="revelarPagina(2); event.preventDefault()">Más Protocolos</a></li>
+          <li><a href="" onclick="revelarPagina(3); event.preventDefault()">Ventajas</a></li>
+          <li><a href="" onclick="revelarPagina(4); event.preventDefault()">Desventajas</a></li>
+        </ul>
+      </li>
+      <li><a href="tema-3.html">Internet de las Cosas</a></li>
+      <li><a href="integrantes.html">Créditos</a></li>
     </ol>
   </nav>
 
   <div class="info_tema">
-    <div class="bloque_tema">
-      <h2>Titulo</h2>
+    <div class="bloque_tema info_visible">
+      <h1>Establecimiento de un enlace seguro de red: Tunelización (Tunneling)</h1>
+      <h2>¿Qué es Tunneling?</h2>
       <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae provident minus dicta, nihil non error vel
-        voluptatum nostrum veniam dolore maiores assumenda quaerat eaque. A provident laboriosam distinctio
-        repudiandae recusandae. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque enim amet veniam
-        sequi eum ipsum iure, suscipit aspernatur aliquid fugiat vero? Neque non enim sunt maiores nisi. Iure,
-        possimus? Quaerat.
+        La tunelización es una técnica utilizada en redes para transportar datos a través de una infraestructura que no
+        es directamente compatible con el protocolo de dichos datos. Esto se logra mediante el encapsulado de paquetes,
+        que consiste en envolver un paquete de datos dentro de otro, esto para permitir que los datos viajen por redes
+        que de otra manera no podrían soportarlos. La tunelización una herramienta clave en redes privadas virtuales
+        (VPN), donde se asegura la transmisión de datos entre dispositivos y redes de manera segura y eficiente.
       </p>
+
+      <p>
+        El encapsulado implica dividir los datos en paquetes, cada paquete con un encabezado y una carga útil. El
+        encabezado contiene información esencial como el destino del paquete y el protocolo utilizado, mientras que la
+        carga útil es el contenido del paquete. Durante la tunelización, un paquete completo, incluido su encabezado y
+        carga útil, se encapsula dentro de la carga útil de otro paquete, formando un paquete dentro de otro paquete.
+        Esto permite que el paquete encapsulado utilice un protocolo diferente mientras viaja por la red.
+      </p>
+
+      <p>
+        Además de su uso en VPN, la tunelización ofrece otras ventajas como la conexión segura entre redes, el
+        transporte de protocolos incompatibles y, en algunos casos, la capacidad de sortear firewalls. Estas
+        características hacen que la tunelización sea una solución versátil cuando se quiere superar restricciones de
+        red, mejorar la seguridad y/o garantizar la compatibilidad en entornos de comunicación complejos.
+      </p>
+
+      <img src="../imagenes/image.png" width="25%">
     </div>
 
-    <div class="bloque_tema">
-      <h2>Un tema</h2>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet rem atque officia.
-        Nesciunt facilis illo quos ratione saepe iste obcaecati, provident molestias totam, nisi quidem
-        aperiam iusto sequi quo. Accusantium?</p>
+    <div class="bloque_tema info_hidden">
+      <h1>Establecimiento de un enlace seguro de red: Tunelización (Tunneling)</h1>
+      <h2>Protocolos de tunneling</h2>
+      <p>
+        Una VPN es una conexión segura y encriptada en una red pública compartida. La tunelización es el proceso que
+        permite que los paquetes de la VPN lleguen a su destino. Las VPN pueden utilizar una variedad de protocolos:
+      </p>
+
       <ol>
         <li>
-          <h3>lorem</h3>
+          <b>IPsec</b> (Internet Protocol Security): Es un conjunto de protocolos que opera en la capa de red para
+          establecer conexiones seguras mediante el cifrado completo del tráfico. Crea túneles para proteger los datos
+          entre redes o dispositivos. Aunque el tráfico se desencripta al llegar al destino, también puede operar en
+          modo de transporte, que no genera un túnel, pero asegura los paquetes en tránsito.
         </li>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque odio exercitationem beatae
-          similique quam iure cumque ipsam ipsa quos at dolorum, alias consequuntur fugiat est facere aliquam
-          incidunt illo temporibus.</p>
         <li>
-          <h3>lorem</h3>
+          <b>TLS</b> (Transport Layer Security): Este protocolo opera en las capas superiores del modelo OSI (capa 6 o
+          7) y cifra el tráfico en túneles seguros. TLS se llama a veces SSL (Secure Sockets Layer), aunque SSL se
+          refiere a un protocolo más antiguo que ya no se utiliza. TLS permite el intercambio seguro de datos y puede
+          admitir tunelización dividida, donde parte del tráfico se desvía fuera del túnel VPN.
         </li>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque odio exercitationem beatae
-          similique quam iure cumque ipsam ipsa quos at dolorum, alias consequuntur fugiat est facere aliquam
-          incidunt illo temporibus.</p>
+        <li>
+          <b>GRE</b> (Generic Routing Encapsulation): Proporciona un método simple para encapsular paquetes de un
+          protocolo dentro de otro, permitiendo conexiones punto a punto entre redes incompatibles. GRE agrega dos
+          encabezados: uno para identificar el protocolo encapsulado y otro para direccionar el paquete. Aunque no
+          incluye cifrado, su flexibilidad lo hace útil en aplicaciones de red.
+        </li>
+        <li>
+          <b>SSH</b> (Secure Shell): Opera en la capa de aplicación del modelo OSI (capa 7) y crea conexiones
+          encriptadas entre clientes y servidores. Además de su función principal de acceso remoto seguro, puede
+          establecer túneles cifrados para el tráfico de red, siendo una posible solución para transmitir datos
+          sensibles.
+        </li>
       </ol>
+      <img src="../imagenes/image2.png" width="25%">
     </div>
 
-    <div class="bloque_tema">
-      <h2>Titulo</h2>
+    <div class="bloque_tema info_hidden">
+      <h1>Establecimiento de un enlace seguro de red: Tunelización (Tunneling)</h1>
+      <h2>Protocolos de tunneling</h2>
       <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae provident minus dicta, nihil non error vel
-        voluptatum nostrum veniam dolore maiores assumenda quaerat eaque. A provident laboriosam distinctio
-        repudiandae recusandae. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque enim amet veniam
-        sequi eum ipsum iure, suscipit aspernatur aliquid fugiat vero? Neque non enim sunt maiores nisi. Iure,
-        possimus? Quaerat.
+        Una VPN es una conexión segura y encriptada en una red pública compartida. La tunelización es el proceso que
+        permite que los paquetes de la VPN lleguen a su destino. Las VPN pueden utilizar una variedad de protocolos:
       </p>
-    </div>
 
-    <div class="bloque_tema">
-      <h2>Un tema</h2>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet rem atque officia.
-        Nesciunt facilis illo quos ratione saepe iste obcaecati, provident molestias totam, nisi quidem
-        aperiam iusto sequi quo. Accusantium?</p>
       <ol>
         <li>
-          <h3>lorem</h3>
+          <b>PPTP</b> (Protocolo de Tunelización Punto a Punto): Facilita la transferencia privada de datos desde un
+          cliente remoto a un servidor encapsulando paquetes a nivel de TCP/IP. Es uno de los protocolos VPN más
+          antiguos, compatible con sistemas como Windows, Mac y Linux, aunque su nivel de seguridad ha quedado obsoleto
+          en comparación con protocolos modernos por lo que está en desuso.
         </li>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque odio exercitationem beatae
-          similique quam iure cumque ipsam ipsa quos at dolorum, alias consequuntur fugiat est facere aliquam
-          incidunt illo temporibus.</p>
         <li>
-          <h3>lorem</h3>
+          <b>SSTP</b> (Protocolo de Tunelización de Socket Seguro): Desarrollado por Microsoft, este protocolo utiliza
+          SSL para garantizar conexiones VPN seguras, pero está limitado principalmente a sistemas Windows. Su
+          integración nativa en este sistema lo hace fácil de implementar, aunque su disponibilidad es más restringida
+          en otros entornos.
         </li>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque odio exercitationem beatae
-          similique quam iure cumque ipsam ipsa quos at dolorum, alias consequuntur fugiat est facere aliquam
-          incidunt illo temporibus.</p>
+        <li>
+          <b>L2TP</b> (Protocolo de Tunelización de Capa 2): Publicado en el año 2000, combina características de PPTP
+          de Microsoft y L2F (Layer 2 Forwarding) de Cisco. Diseñado para operar sobre Internet, L2TP es usado
+          frecuentemente por proveedores de servicios de Internet para habilitar conexiones VPN, aunque no incluye
+          cifrado por sí solo y suele combinarse con IPsec para mayor seguridad.
+        </li>
+        <li>
+          <b>VXLAN</b> (Red de Área Local Virtual Extensible): Esta tecnología de virtualización de red extiende
+          conexiones de capa 2 sobre redes de capa 3 al encapsular tramas Ethernet en paquetes VXLAN con direcciones IP.
+          Diseñado Fpara resolver problemas de escalabilidad, es ideal para redes grandes y entornos de centros de datos
+          virtualizados.
+        </li>
       </ol>
+      <img src="../imagenes/image3.png" width="25%">
+    </div>
+
+    <div class="bloque_tema info_hidden">
+      <h1>Establecimiento de un enlace seguro de red: Tunelización (Tunneling)</h1>
+      <h2>Ventajas y desventajas</h2>
+      <h3>Ventajas:</h3>
+
+      <ol>
+        <li>
+          <b>Datos seguros</b>
+          <p>
+            Proporciona seguridad adicional para tus datos mientras viajan a través de redes, cifrándolos y asegurando
+            que solo sean accesibles por usuarios autorizados. También ayuda a prevenir el acceso no autorizado a la red
+            y mantiene alejados a agentes maliciosos.
+          </p>
+        </li>
+        <li>
+          <b>Creación de VPNs</b>
+          <p>
+            Puede usarse para crear una VPN, permitiendo que múltiples usuarios remotos se conecten de forma segura a
+            través de una red pública o privada compartida. Esto facilita el trabajo remoto y la colaboración entre
+            equipos de manera más segura
+          </p>
+        </li>
+        <li>
+          <b>Minimizar la latencia y mejorar la velocidad</b>
+          <p>
+            Algunos protocolos como GRE e IPsec pueden reducir la latencia y mejorar la velocidad al disminuir la
+            cantidad de datos que necesitan ser enviados, aumentando la eficiencia de la red.
+          </p>
+        </li>
+        <li>
+          <b>Mejorar la escalabilidad </b>
+          <p>
+            Facilita escalar las redes hacia arriba o hacia abajo según las necesidades actuales, ya que los túneles
+            pueden agregarse o eliminarse fácilmente sin interrumpir las conexiones o servicios existentes.
+          </p>
+        </li>
+        <li>
+          <b>Mejorar la manejabilidad </b>
+          <p>
+            En redes más grandes que necesitan permanecer organizadas, permite a los administradores gestionar
+            fácilmente diferentes segmentos de la red por separado sin afectar el rendimiento o las medidas de seguridad
+            de las demás partes.
+          </p>
+        </li>
+        <li>
+          <b>Aumentar la flexibilidad</b>
+          <p>
+            Brinda más flexibilidad a las organizaciones para configurar sus redes. Pueden usar diferentes protocolos y
+            aplicaciones en distintas partes de la infraestructura, manteniéndolas conectadas de manera segura a través
+            de túneles.
+          </p>
+        </li>
+        <li>
+          <b>Permitir el uso de protocolos de red no compatibles</b>
+          <p>
+            Como los túneles permiten el paso de diferentes tipos de tráfico, ofrecen soporte para protocolos que
+            podrían no ser compatibles con algunos dispositivos de hardware, resolviendo problemas de compatibilidad que
+            podrían impedir que ciertas aplicaciones funcionen correctamente.
+          </p>
+        </li>
+        <li>
+          <b>Eludir firewalls de ISP</b>
+          <p>
+            Puede usarse para evitar las restricciones impuestas por reglas locales de firewalls o limitaciones de ISP.
+            Esto es útil para acceder a servicios bloqueados en ciertas regiones o países debido a leyes de censura u
+            otros problemas regulatorios. Las aplicaciones VPN suelen utilizarse para sortear estas restricciones y
+            permitir a los usuarios acceder a contenido restringido.
+          </p>
+        </li>
+      </ol>
+      <img src="../imagenes/image4.png" width="25%">
+    </div>
+
+    <div class="bloque_tema info_hidden">
+      <h1>Establecimiento de un enlace seguro de red: Tunelización (Tunneling)</h1>
+      <h2>Ventajas y desventajas</h2>
+      <h3>Desventajas del túnel de red:</h3>
+
+      <ol>
+        <li>
+          <b>Riesgos de seguridad</b>
+          <p>
+            La principal desventaja de usar túneles de red es que pueden generar riesgos de seguridad si los datos no se
+            cifran adecuadamente. Si el túnel está configurado incorrectamente, podría ser posible que agentes
+            maliciosos intercepten y modifiquen los datos enviados a través de él.
+          </p>
+        </li>
+        <li>
+          <b>Requisitos de hardware y software especial </b>
+          <p>
+            Para usar túneles de red, se necesita hardware o software especial que los soporte. Esto puede ser costoso
+            de implementar, especialmente si se están configurando múltiples túneles en redes diferentes.
+          </p>
+        </li>
+        <li>
+          <b>Problemas de compatibilidad</b>
+          <p>
+            Al igual que con cualquier tecnología, pueden surgir problemas de compatibilidad al usar diferentes
+            protocolos o aplicaciones en redes que no los soportan. Por lo que es importante investigar los diferentes
+            protocolos de túnel y verificar la compatibilidad antes de implementarlos.
+          </p>
+        </li>
+        <li>
+          <b>Aumento de la latencia </b>
+          <p>
+            Mientras que algunos protocolos pueden reducir la latencia, otros pueden aumentarla. Es necesario investigar
+            los diferentes protocolos de túnel y determinar cuál funciona mejor antes de implementarlos.
+          </p>
+        </li>
+      </ol>
+      <img src="../imagenes/image4.png" width="25%">
     </div>
   </div>
 
   <footer>
-    
+
   </footer>
 
 </body>
+
+<script src="../js/info.js"></script>
 
 </html>
