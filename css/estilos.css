@@ -5,7 +5,7 @@ body {
 	line-height: 1.5;
 	color: #212529;
 	margin: 0;
-	background-color: #fff;
+	background-color: #ffffff;
 	-webkit-text-size-adjust: 100%;
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 	display: flex;
@@ -67,8 +67,28 @@ li ul {
 	padding-left: 20px;
 }
 
+.lista_integrantes{
+	float: left;
+    margin: 0;
+    padding: 0;
+    width: 50%; 
+}
+
+.integrante{
+	font-size: 2.5rem;
+}
+
 img {
-	
+	text-align: center;
+	display: block;
+	margin: 0 auto;
+}
+
+.img_creditos{
+	float: right;
+	margin-right: 10rem;
+	width: 35%;
+	height: auto;
 }
 
 .nav {
