@@ -127,3 +127,13 @@ img {
 	background-color: #fff;
 	border-color: #dee2e6 #dee2e6 #fff;
 }
+
+.indice_link{
+	font-size: 3rem;
+	text-decoration: underline;
+}
+
+.indice_lista{
+	list-style: none
+;
+}
